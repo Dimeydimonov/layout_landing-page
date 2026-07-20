@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Landing Page</title>
+    <title>The MET</title>
     <link
       rel="stylesheet"
       href="src/styles/main.scss"
@@ -17,6 +17,65 @@
     ></script>
   </head>
   <body>
-    <h1>Landing Page</h1>
+    <header class="header">
+      <div class="header__container container">
+        <a class="header__logo" href="#home">THE MET</a>
+
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__nav-link is-active" href="#home">Home</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#about">About Us</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#explore">Explore Online</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container">
+          <h1 class="hero__title">Welcome to The MET</h1>
+        </div>
+      </section>
+
+      <section class="visit" id="plan-your-visit">
+        <div class="container">
+          <h2 class="section-title">Plan your visit</h2>
+        </div>
+      </section>
+
+      <section class="exhibitions" id="now-on-view">
+        <div class="container">
+          <h2 class="section-title">Now On View</h2>
+        </div>
+      </section>
+
+      <section class="explore" id="explore">
+        <div class="container">
+          <h2 class="section-title">More to Explore Online</h2>
+        </div>
+      </section>
+
+      <section class="contacts" id="contacts">
+        <div class="container">
+          <h2 class="section-title">Contact us</h2>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2013 Miami</p>
+      </div>
+    </footer>
   </body>
 </html>

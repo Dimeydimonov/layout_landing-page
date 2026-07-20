@@ -1,3 +1,107 @@
-body {
+// ===== Variables =====
+$color-main-dark: #161616;
+$color-accent-main: #d12d35;
+$color-text: #3e3e3e;
+$color-white: #fff;
+$color-bg-light: #f8f8fa;
+$font-family: 'Georgia', serif;
+$container-max-width: 1260px;
+$grid-margin: 120px;
+$grid-gutter: 24px;
+$grid-columns: 12;
+$transition-duration: 300ms;
+
+// ===== Reset =====
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  color: $color-text;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// ===== Layout helpers =====
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 calc(#{$grid-margin} / 2);
+}
+
+// ===== Header =====
+.header {
+  background: $color-main-dark;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  &__logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-white;
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__nav-link {
+    color: $color-white;
+    font-size: 14px;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-accent-main;
+    }
+
+    &.is-active {
+      color: $color-accent-main;
+    }
+  }
+}
+
+// ===== Hero =====
+.hero {
+  position: relative;
+  height: 500px;
+  background-image: url('../images/welcome-to-the-met.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    color: $color-white;
+    font-size: 48px;
+    text-align: center;
+  }
+}
+
+// ===== Section title (shared) =====
+.section-title {
+  font-size: 32px;
+  margin-bottom: 40px;
 }
