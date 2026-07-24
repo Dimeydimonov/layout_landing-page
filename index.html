@@ -1,81 +1,235 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>The MET</title>
-    <link
-      rel="stylesheet"
-      href="src/styles/main.scss"
-    />
-    <script
-      src="src/scripts/main.js"
-      defer
-    ></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>The MET</title>
+  <link rel="icon" type="image/png" href="src/images/the_met.png" />
+  <link
+    rel="stylesheet"
+    href="src/styles/main.scss"
+  />
+  <script
+    src="src/scripts/main.js"
+    defer
+  ></script>
+</head>
   <body>
-    <header class="header">
-      <div class="header__container container">
-        <a class="header__logo" href="#home">THE MET</a>
-
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a class="header__nav-link is-active" href="#home">Home</a>
-            </li>
-            <li class="header__nav-item">
-              <a class="header__nav-link" href="#about">About Us</a>
-            </li>
-            <li class="header__nav-item">
-              <a class="header__nav-link" href="#explore">Explore Online</a>
-            </li>
-            <li class="header__nav-item">
-              <a class="header__nav-link" href="#contacts">Contacts</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
     <main>
+      <header class="header">
+        <div class="header__container container">
+          <a class="header__logo" href="src/images/the_met.png">
+            <img src="src/images/the_met.png" alt="The MET" />
+          </a>
+
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a class="header__nav-link" href="#contacts">
+                  <img src="src/images/phone_hover.png" alt="Call us" />
+                </a>
+              </li>
+                    <li class="header__nav-item">
+                      <a class="header__nav-link" href="#menu">
+                        <img src="src/images/Icon_menu_hover.png" alt="Menu" />
+                      </a>
+                    </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <section class="menu" id="menu">
+  <div class="container">
+
+    <div class="menu__top">
+      <a class="menu__logo" href="#home">
+        <img src="src/images/the_met.png" alt="The MET">
+      </a>
+
+      <a class="menu__close" href="#">
+        ✕
+      </a>
+    </div>
+
+    <nav class="menu__nav">
+      <a href="#home">HOME</a>
+      <a href="#plan-your-visit">ABOUT US</a>
+      <a href="#now-on-view">NOW ON VIEW</a>
+      <a href="#explore">TESTIMONIALS</a>
+      <a href="#contacts">CONTACTS</a>
+    </nav>
+
+    <div class="menu__contacts">
+
+      <p>THE MET FIFTH AVENUE</p>
+      <a href="tel:+12125357710">+1 212-535-7710</a>
+
+      <p>THE MET CLOISTERS</p>
+      <a href="tel:+12129233700">+1 212-923-3700</a>
+
+      <a class="menu__call" href="tel:+12125357710">
+        CALL TO ORDER
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
       <section class="hero" id="home">
         <div class="container">
           <h1 class="hero__title">Welcome to The MET</h1>
         </div>
       </section>
 
-      <section class="visit" id="plan-your-visit">
-        <div class="container">
-          <h2 class="section-title">Plan your visit</h2>
+ <section class="visit" id="plan-your-visit">
+  <div class="container">
+    <div class="visit__grid">
+      <div class="visit__heading">
+        <p class="visit__label">Plan your visit</p>
+        <h2 class="visit__title">Museum Hours</h2>
+      </div>
+
+      <div class="visit__hours">
+        <h3 class="visit__museum-name">The Met Fifth Avenue</h3>
+
+        <div class="visit__hours-row">
+          <span class="visit__time">10 am - 5 pm</span>
+          <span class="visit__days">Sun, Mon, Tue, Thu</span>
         </div>
-      </section>
+        <div class="visit__hours-row">
+          <span class="visit__time">10 am - 9 pm</span>
+          <span class="visit__days">Fri, Sat</span>
+        </div>
+        <div class="visit__hours-row">
+          <span class="visit__time">Closed</span>
+          <span class="visit__days">Wed</span>
+        </div>
+
+        <p class="visit__closed-label">Closed on</p>
+        <p class="visit__note">Thanksgiving Day, Dec 25, Jan 1, and the first Monday in May.</p>
+
+        <h3 class="visit__museum-name">The Met Cloisters</h3>
+
+        <div class="visit__hours-row">
+          <span class="visit__time">10 am – 4.30 pm</span>
+          <span class="visit__days">Thu - Tue</span>
+        </div>
+        <div class="visit__hours-row">
+          <span class="visit__time">Closed</span>
+          <span class="visit__days">Wed</span>
+        </div>
+
+        <p class="visit__closed-label">Closed on</p>
+        <p class="visit__note">Thanksgiving Day, Dec 25, Jan 1</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section class="exhibitions" id="now-on-view">
         <div class="container">
           <h2 class="section-title">Now On View</h2>
+          <p class="exhibitions__subtitle">Explore exhibition gallery guides, videos, articles, and more.</p>
+
+          <div class="exhibitions__item">
+            <div class="exhibitions__bento">
+              <img class="exhibitions__collage" src="src/images/mcqueen-wide.jpg" alt="Exhibition hall" />
+              <img class="exhibitions__photo" src="src/images/mcqueen-figure-tall.jpg" alt="Museum portrait" />
+            </div>
+            <a class="exhibitions__item-label" href="#">A New Look at Old Masters</a>
+            <p class="exhibitions__item-date">December 12, 2020 – Through Spring 2023</p>
+          </div>
+
+          <div class="exhibitions__item">
+            <div class="exhibitions__item-images">
+              <img src="src/images/egyptian-statues.png" alt="Bodhisattva painting" />
+              <img src="src/images/bodhisattva.png" alt="Tibetan mandala" />
+              <img src="src/images/9.png" alt="Thangka painting" />
+            </div>
+            <a class="exhibitions__item-label" href="#">Bodhisattvas of Wisdom, Compassion, and Power</a>
+            <p class="exhibitions__item-date">March 27, 2021 – October 30, 2022</p>
+          </div>
+
+          <div class="exhibitions__item">
+            <div class="exhibitions__item-images exhibitions__item-images--two">
+              <img src="src/images/10.png" alt="Antique clocks" />
+              <img src="src/images/8.png" alt="Porcelain figures" />
+            </div>
+            <a class="exhibitions__item-label" href="#">Inspiring Walt Disney: The Animation of French Decorative Arts</a>
+            <p class="exhibitions__item-date">December 10, 2021 – March 6, 2022</p>
+          </div>
+
+          <a class="exhibitions__cta" href="#">View all exhibitions</a>
         </div>
       </section>
 
       <section class="explore" id="explore">
         <div class="container">
           <h2 class="section-title">More to Explore Online</h2>
+
+          <div class="explore__grid">
+            <div class="explore__card">
+              <img class="explore__image" src="src/images/Person-1.png" alt="Collection Areas" />
+              <h3 class="explore__title">Collection Areas</h3>
+              <p class="explore__text">These collection areas study, exhibit, and care for the objects in The Met collection.</p>
+            </div>
+
+            <div class="explore__card">
+              <img class="explore__image" src="src/images/Person-2.png" alt="Travel" />
+              <h3 class="explore__title">Travel</h3>
+              <p class="explore__text">Travel with The Met connects the Museum's wide and diverse audience to art, inspiration, and historical perspective.</p>
+            </div>
+
+            <div class="explore__card">
+              <img class="explore__image" src="src/images/Person-3.png" alt="Virtual Group Tours" />
+              <h3 class="explore__title">Virtual Group Tours</h3>
+              <p class="explore__text">Travel with The Met connects the Museum's wide and diverse audience to art, inspiration, and historical perspective.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="contacts" id="contacts">
-        <div class="container">
-          <h2 class="section-title">Contact us</h2>
-        </div>
-      </section>
-    </main>
+<section class="contacts" id="contacts">
+  <div class="container">
+    <h2 class="section-title contacts__title">Contact us</h2>
 
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2013 Miami</p>
+    <div class="contacts__grid">
+      <div class="contacts__info">
+        <h3 class="contacts__museum-name">The Met Fifth Avenue</h3>
+        <p class="contacts__label">Phone</p>
+        <p class="contacts__value">+1 212-535-7710</p>
+        <p class="contacts__label">Address</p>
+        <p class="contacts__value">1000 Fifth Avenue<br>New York, NY 10028</p>
       </div>
-    </footer>
+
+      <div class="contacts__info">
+        <h3 class="contacts__museum-name">The Met Cloisters</h3>
+        <p class="contacts__label">Phone</p>
+        <p class="contacts__value">+1 212-923-3700</p>
+        <p class="contacts__label">Address</p>
+        <p class="contacts__value">99 Margaret Corbin Drive<br>Fort Tryon Park<br>New York, NY 10040</p>
+      </div>
+
+      <form class="contacts__form">
+        <input class="contacts__input" type="text" name="name" placeholder="Name" required>
+        <input class="contacts__input" type="email" name="email" placeholder="Email" required>
+        <textarea class="contacts__textarea" name="message" placeholder="Message" required></textarea>
+        <button class="contacts__submit" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="footer">
+  <img class="footer__image" src="src/images/old-masters-banner.png" alt="Gallery view" />
+</footer>
   </body>
 </html>
