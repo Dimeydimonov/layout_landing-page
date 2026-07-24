@@ -2,7 +2,7 @@
   "name": "layout_landing-page",
   "version": "1.0.0",
   "description": "Landing page",
-  "homepage": "https://Dimeydimonov.github.io/layout_landing-page",
+  "homepage": "layout_landing-page",
   "scripts": {
     "init": "mate-scripts init",
     "start": "mate-scripts start -l",
@@ -10,7 +10,7 @@
     "format": "prettier --ignore-path .prettierignore --write './src/**/*.{html,css,scss}'",
     "lint": "npm run style-format && npm run format && mate-scripts lint",
     "test:only": "mate-scripts test",
-"build": "vite build --base=/layout_landing-page/",
+    "build": "mate-scripts build",
     "deploy": "mate-scripts deploy",
     "update": "mate-scripts update",
     "postinstall": "npm run update",
