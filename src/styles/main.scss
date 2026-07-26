@@ -1,9 +1,12 @@
+@import 'https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap';
+
 $color-main-dark: #161616;
 $color-accent-main: #d12d35;
 $color-text: #3e3e3e;
 $color-white: #fff;
 $color-bg-light: #f8f8fa;
-$font-family: 'Georgia', serif;
+$font-family: 'Cinzel', serif;
+$font-family-body: 'Georgia', serif;
 $container-max-width: 1260px;
 $grid-margin: 120px;
 $grid-gutter: 24px;
@@ -19,8 +22,12 @@ $bp-mobile: 320px;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: $font-family;
+  font-family: $font-family-body;
   color: $color-text;
   line-height: 1.4;
 }
@@ -39,6 +46,14 @@ img {
   display: block;
 }
 
+.page {
+  position: relative;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
 .container {
   width: 100%;
   max-width: $container-max-width;
@@ -50,10 +65,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   width: 100%;
-  max-width: $container-max-width;
-  margin: 0 auto;
   z-index: 10;
   height: 80px;
   background: transparent;
@@ -92,8 +104,6 @@ img {
 .hero {
   position: relative;
   width: 100%;
-  max-width: $container-max-width;
-  margin: 0 auto;
   height: $bg-height;
   background-image: url('../images/welcome-to-the-met.jpg');
   background-repeat: no-repeat;
@@ -119,7 +129,12 @@ img {
 }
 
 .section-title {
-  font-size: 32px;
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  text-align: center;
   margin-bottom: 40px;
 }
 
@@ -144,8 +159,8 @@ img {
   }
 
   &__hours {
-    border: 1px solid $color-bg-light;
-    padding: 32px;
+    border: none;
+    padding: 0;
   }
 
   &__museum-name {
@@ -202,13 +217,27 @@ img {
   &__subtitle {
     color: $color-text;
     margin-bottom: 40px;
+    text-align: center;
   }
 
   &__bento {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: $grid-gutter;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+  }
+
+  &__zoom-wrap {
+    display: block;
+    overflow: hidden;
+
+    img {
+      transition: transform $transition-duration;
+    }
+
+    &:hover :where(img) {
+      transform: scale(1.08);
+    }
   }
 
   &__collage {
@@ -216,6 +245,7 @@ img {
     width: 100%;
     object-fit: cover;
     height: 320px;
+    transition: transform $transition-duration;
   }
 
   &__photo {
@@ -223,30 +253,37 @@ img {
     width: 100%;
     object-fit: cover;
     height: 320px;
+    transition: transform $transition-duration;
+  }
 
+  &__bento .exhibitions__zoom-wrap:nth-child(1) {
+    grid-column: 1 / 8;
+  }
+
+  &__bento .exhibitions__zoom-wrap:nth-child(2) {
+    grid-column: 8 / 13;
   }
 
   &__item {
     margin-bottom: 40px;
-
   }
 
-        &__item-images {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: $grid-gutter;
-          margin-bottom: 20px;
+  &__item-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $grid-gutter;
+    margin-bottom: 20px;
 
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-duration;
+    }
 
-          &--two {
-            grid-template-columns: 1fr 2fr;
-          }
-
+    &--two {
+      grid-template-columns: 1fr 2fr;
+    }
   }
 
   &__item-label {
@@ -303,28 +340,30 @@ img {
     width: 100%;
     object-fit: cover;
     margin-bottom: 20px;
+    transition: transform $transition-duration;
   }
 
-.section-title {
-  font-family: Cinzel, serif;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 48px;
-  letter-spacing: -1.5px;
-  text-align: center;
+  &__title {
+    color: $color-accent-main;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    color: $color-text;
+    font-size: 14px;
+  }
 }
+
+.exhibitions__zoom-wrap:hover .explore__image {
+  transform: scale(1.08);
 }
 
 .contacts {
   padding: 80px 0;
 
   &__title {
-     font-family: Cinzel, serif;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 48px;
-  letter-spacing: -1.5px;
-  text-align: center;
+    margin-bottom: 40px;
   }
 
   &__grid {
@@ -356,6 +395,15 @@ img {
     font-size: 14px;
     color: $color-main-dark;
     font-weight: 700;
+    display: block;
+  }
+
+  &__link {
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-accent-main;
+    }
   }
 
   &__form {
@@ -370,7 +418,7 @@ img {
     border: none;
     background: $color-bg-light;
     padding: 16px;
-    font-family: $font-family;
+    font-family: $font-family-body;
     font-size: 14px;
 
     &::placeholder {
@@ -400,18 +448,27 @@ img {
   }
 }
 
-
 .footer {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
   width: 100%;
   max-width: 1259px;
   height: 359px;
   margin: 0 auto 20px;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .menu {
   position: fixed;
   inset: 0;
   z-index: 1000;
+  overflow: auto;
 
   background: $color-accent-main;
 
@@ -439,6 +496,10 @@ img {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 55px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $color-accent-main;
   }
 
   &__logo img {
@@ -460,7 +521,7 @@ img {
 
   &__nav a {
     color: $color-white;
-    font-family: Cinzel, serif;
+    font-family: $font-family;
     font-size: 22px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -470,7 +531,7 @@ img {
   }
 
   &__nav a::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -481,7 +542,7 @@ img {
     background: $color-white;
 
     transform: scaleX(0);
-    transition: transform .3s;
+    transition: transform $transition-duration;
     transform-origin: left;
   }
 
@@ -505,6 +566,11 @@ img {
     width: fit-content;
     font-size: 13px;
     font-weight: 700;
+    transition: opacity $transition-duration;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__call {
@@ -588,8 +654,8 @@ img {
     width: 100%;
     height: auto;
   }
-    .menu {
 
+  .menu {
     .container {
       padding-top: 28px;
     }
@@ -628,7 +694,6 @@ img {
   }
 
   .section-title,
-  .explore .section-title,
   .contacts__title {
     font-size: 32px;
     line-height: 32px;
@@ -676,8 +741,8 @@ img {
     width: 100%;
     height: auto;
   }
-  .menu {
 
+  .menu {
     .container {
       padding-top: 24px;
     }
