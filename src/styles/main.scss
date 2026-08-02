@@ -6,6 +6,7 @@ $color-text: #3e3e3e;
 $color-white: #fff;
 $color-bg-light: #f8f8fa;
 $font-family: 'Cinzel', serif;
+$font-family-body: 'Georgia', serif;
 $container-max-width: 1260px;
 $grid-margin: 120px;
 $grid-gutter: 24px;
@@ -418,7 +419,7 @@ img {
     border: none;
     background: $color-bg-light;
     padding: 16px;
-    font-family: $font-family-body;
+    font-family: $font-family;
     font-size: 14px;
 
     &::placeholder {
